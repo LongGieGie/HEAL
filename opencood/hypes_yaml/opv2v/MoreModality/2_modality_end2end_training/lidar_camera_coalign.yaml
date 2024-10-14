@@ -177,6 +177,7 @@ model:
         core_method: identity
 
     fusion_method: att
+    att:
       feat_dim: [64, 128, 256]
 
     fusion_backbone:

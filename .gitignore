@@ -12,12 +12,14 @@ __pycache__/
 .Python
 build/
 develop-eggs/
+dataset/
 dist/
 downloads/
 eggs/
 .eggs/
 lib/
 lib64/
+opencood/logs
 parts/
 sdist/
 var/
