@@ -136,7 +136,8 @@ def main():
     if opt.fusion_method == 'intermediate':
         hypes['fusion']['core_method'] += 'infer' 
     hypes['comm_range'] = 180
-    hypes['heter']['assignment_path'] = hypes['heter']['assignment_path'].replace(".json", "_in_order.json")
+    if hypes['heter']['assignment_path']:
+        hypes['heter']['assignment_path'] = hypes['heter']['assignment_path'].replace(".json", "_in_order.json")
     hypes = update_dict(hypes, {
             "ego_modality": 'm1'
         })
