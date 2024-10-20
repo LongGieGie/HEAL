@@ -4,7 +4,7 @@ numpy
 numba
 # opencv-python-headless~=4.5.1.48
 # nuscenes-devkit requires opencv-python>=4.5.4.58
-opencv-python-headless~=4.5.4.58
+opencv-python~=4.5.4.58
 scipy
 scikit-image
 tqdm
