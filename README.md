@@ -132,6 +132,13 @@ cd HEAL
 python opencood/pcdet_utils/setup.py build_ext --inplace
 ```
 
+### Step 5: Dependencies for using nuscenes dataset (optional)
+Install the dependencies for using nuscenes dataset.
+
+```bash
+conda activate heal
+pip install nuscenes-devkit
+```
 
 ---
 To align with our agent-type assignment in our experiments, please make a copy of the assignment file under the logs folder
@@ -148,7 +155,7 @@ These training and testing instructions apply to all end-to-end training methods
 ### Train the model
 We uses yaml file to configure all the parameters for training. To train your own model
 from scratch or a continued checkpoint, run the following commonds:
-```python
+```bash
 python opencood/tools/train.py -y ${CONFIG_FILE} [--model_dir ${CHECKPOINT_FOLDER}]
 ```
 Arguments Explanation:
@@ -158,13 +165,13 @@ a FCooper model. **We elaborate each entry of the yaml in the exemplar config fi
 given, the trainer will discard the `hypes_yaml` and load the `config.yaml` in the checkpoint folder. In this case, ${CONFIG_FILE} can be `None`,
 
 ### Train the model in DDP
-```python
+```bash
 CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch  --nproc_per_node=2 --use_env opencood/tools/train_ddp.py -y ${CONFIG_FILE} [--model_dir ${CHECKPOINT_FOLDER}]
 ```
 `--nproc_per_node` indicate the GPU number you will use.
 
 ### Test the model
-```python
+```bash
 python opencood/tools/inference.py --model_dir ${CHECKPOINT_FOLDER} [--fusion_method intermediate]
 ```
 - `inference.py` has more optional args, you can inspect into this file.
