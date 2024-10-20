@@ -10,7 +10,9 @@ PyYAML
 open3d
 cython
 tensorboardX
-shapely==2.0.0
+# shapely==2.0.0
+# nuscenes-devkit requires shapely==1.8.5
+shapely==1.8.5
 einops
 timm
 icecream
